@@ -21,9 +21,9 @@ where
     Deserialize::deserialize(d).map(|x: Option<_>| x.unwrap_or("null".to_string()))
 }
 
-fn get_request() -> Result<Do0result, reqwest::Error> {
+fn get_request(link: String) -> Result<Do0result, reqwest::Error> {
     let client = reqwest::Client::new();
-    let params = [("link", "http://google.com")];
+    let params = [("link", link)];
     let response: Do0result = client
         .post("https://do0.ir/post/sD9qHKZaUC7g/2.5/code")
         .form(&params)
@@ -36,10 +36,21 @@ fn get_request() -> Result<Do0result, reqwest::Error> {
 }
 
 fn main() {
-    let _args: Vec<String> = env::args().collect();
-    // println!("{:?}", args);
-    let do0_answer: Do0result = get_request().expect("could not read file");
-    // do0_answer.short = 
-    // println!("length : {}", do0_answer.short)
-    println!("Short link is https://do0.ir/{}", do0_answer.short)
+    let _args = env::args();
+    let mut i = 0;
+    let mut link: String = "".to_string();
+    for argument in _args {
+        if i == 1 {
+            link = argument;
+        }
+        i += 1;
+    }
+    // println!("{}", link);
+    if link != "" {
+            // println!("{:#?}", _args)
+            let do0_answer: Do0result = get_request(link).expect("could not read file");
+            println!("Short link is https://do0.ir/{}", do0_answer.short)
+    } else {
+        println!("please input the link...and try again.");
+    }
 }
