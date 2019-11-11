@@ -23,7 +23,7 @@ move it to enviroment path ( windows : `"C:\Program Files"` linux : look at `ech
 use `do0ir-cli Link `
 
 ## version :
-v0.1.0
+v0.5.0
 
 ## todo :
 - [x] make windows release
