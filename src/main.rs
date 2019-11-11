@@ -30,9 +30,15 @@ fn get_request(link: String) -> Result<Do0result, reqwest::Error> {
         .send()?
         .json()?;
 
-    // println!("{:#?}", response);
-    // decode_me(resp);
     Ok(response)
+}
+
+fn check_is_url(url: String) -> String {
+    if (url.find("http://") != None) || (url.find("https://") != None) {
+        return url;
+    } else {
+        return "".to_string();
+    }
 }
 
 fn main() {
@@ -45,12 +51,12 @@ fn main() {
         }
         i += 1;
     }
-    // println!("{}", link);
+
+    let link: String = check_is_url(link);
     if link != "" {
-            // println!("{:#?}", _args)
-            let do0_answer: Do0result = get_request(link).expect("could not read file");
-            println!("Short link is https://do0.ir/{}", do0_answer.short)
+        let do0_answer: Do0result = get_request(link).expect("could not read file");
+        println!("Short link is https://do0.ir/{}", do0_answer.short)
     } else {
-        println!("please input the link...and try again.");
+        println!("please input the valid link...and try again.");
     }
 }
