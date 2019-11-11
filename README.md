@@ -30,7 +30,7 @@ v0.1.0
 - [ ] make linux release
 - [ ] make mac release
 ### v1.0 :
-- [ ] check input is url or not.
+- [x] check input is url or not.
 - [ ] handle do0 errors 
 ### v2.0 :
 - [ ] copy short link to clipboard
