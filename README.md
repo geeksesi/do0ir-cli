@@ -1,6 +1,10 @@
 # do0ir-cli
 cli tools for [do0.ir](https://do0.ir)
 
+## what is do0.ir
+do0 is a good link shorter. can protect you from fishing links.
+
+
 build :
 ```
 cargo build
