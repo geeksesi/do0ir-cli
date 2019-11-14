@@ -1,4 +1,7 @@
+extern crate clipboard;
 extern crate reqwest;
+use clipboard::ClipboardContext;
+use clipboard::ClipboardProvider;
 use serde::de::Deserializer;
 use serde::{Deserialize, Serialize};
 use std::env;
@@ -41,6 +44,11 @@ fn check_is_url(url: String) -> String {
     }
 }
 
+fn copy_to_clipboard(shorted: String) {
+    let mut ctx: ClipboardContext = ClipboardProvider::new().unwrap();
+    ctx.set_contents(shorted).unwrap();
+}
+
 fn main() {
     let _args = env::args();
     let mut i = 0;
@@ -54,8 +62,11 @@ fn main() {
 
     let link: String = check_is_url(link);
     if link != "" {
-        let do0_answer: Do0result = get_request(link).expect("could not read file");
-        println!("Short link is https://do0.ir/{}", do0_answer.short)
+        let do0_answer: Do0result = get_request(link).expect("Error");
+        let mut shorted: String = "https://do0.ir/".to_string();
+        shorted.push_str(&do0_answer.short);
+        println!("Short link is {}", shorted);
+        copy_to_clipboard(shorted);
     } else {
         println!("please input the valid link...and try again.");
     }
