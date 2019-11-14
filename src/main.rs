@@ -11,10 +11,14 @@ struct Do0result {
     success: bool,
     #[serde(deserialize_with = "parse_null")]
     error: String,
-    #[serde(deserialize_with = "parse_null")]
+    #[serde(default = "default_resource")]
     address: String,
-    #[serde(deserialize_with = "parse_null")]
+    #[serde(default = "default_resource")]
     short: String,
+}
+
+fn default_resource() -> String {
+    "null".to_string()
 }
 
 fn parse_null<'de, D>(d: D) -> Result<String, D::Error>
@@ -63,10 +67,14 @@ fn main() {
     let link: String = check_is_url(link);
     if link != "" {
         let do0_answer: Do0result = get_request(link).expect("Error");
-        let mut shorted: String = "https://do0.ir/".to_string();
-        shorted.push_str(&do0_answer.short);
-        println!("Short link is {}", shorted);
-        copy_to_clipboard(shorted);
+        if do0_answer.error != "null" {
+            eprintln!("something did Wrong from d0.ir.");
+        } else {
+            let mut shorted: String = "https://do0.ir/".to_string();
+            shorted.push_str(&do0_answer.short);
+            println!("Short link is {}", shorted);
+            copy_to_clipboard(shorted);
+        }
     } else {
         println!("please input the valid link...and try again.");
     }
