@@ -41,7 +41,7 @@ v0.5.0
 - [ ] make mac release
 ### v1.0 :
 - [x] check input is url or not.
-- [ ] handle do0 errors 
+- [x] handle do0 errors 
 ### v2.0 :
 - [x] copy short link to clipboard
 - [ ] get list of all link you shorted
