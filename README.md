@@ -5,6 +5,22 @@ cli tools for [do0.ir](https://do0.ir)
 do0 is a good link shorter. can protect you from fishing links.
 
 
+## CLI abilities :
+- easy to use short link
+- just input your link... short link will copy to your clipboard
+- support all type of shell ( even CMD :D )
+
+
+## installation
+download build from release ( or build it for yourself with --release flag)
+
+move it to enviroment path ( windows : `"C:\Program Files"` linux : look at `echo $PATH`)
+
+use `do0ir-cli Link `
+
+
+## developer usage :
+
 build :
 ```
 cargo build
@@ -15,12 +31,6 @@ run :
 cargo run YOURLINK_HERE
 ```
 
-## installation
-download build from release ( or build it for yourself with --release flag)
-
-move it to enviroment path ( windows : `"C:\Program Files"` linux : look at `echo $PATH`)
-
-use `do0ir-cli Link `
 
 ## version :
 v0.5.0
