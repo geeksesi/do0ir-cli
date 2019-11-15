@@ -1,9 +1,8 @@
-
 use std::env;
 
 mod make_short;
-mod validation;
 mod output;
+mod validation;
 
 fn main() {
     let _args = env::args();
@@ -22,9 +21,7 @@ fn main() {
         if do0_answer.error != "null" {
             eprintln!("something did Wrong from d0.ir.");
         } else {
-            let mut shorted: String = "https://do0.ir/".to_string();
-            shorted.push_str(&do0_answer.short);
-            println!("Short link is {}", shorted);
+            let shorted: String = output::after_success_job(do0_answer.short);
             output::copy_to_clipboard(shorted);
         }
     } else {
