@@ -1,44 +1,10 @@
 extern crate clipboard;
-extern crate reqwest;
 use clipboard::ClipboardContext;
 use clipboard::ClipboardProvider;
-use serde::de::Deserializer;
-use serde::{Deserialize, Serialize};
 use std::env;
 
-#[derive(Debug, Serialize, Deserialize)]
-struct Do0result {
-    success: bool,
-    #[serde(deserialize_with = "parse_null")]
-    error: String,
-    #[serde(default = "default_resource")]
-    address: String,
-    #[serde(default = "default_resource")]
-    short: String,
-}
+mod make_short;
 
-fn default_resource() -> String {
-    "null".to_string()
-}
-
-fn parse_null<'de, D>(d: D) -> Result<String, D::Error>
-where
-    D: Deserializer<'de>,
-{
-    Deserialize::deserialize(d).map(|x: Option<_>| x.unwrap_or("null".to_string()))
-}
-
-fn get_request(link: String) -> Result<Do0result, reqwest::Error> {
-    let client = reqwest::Client::new();
-    let params = [("link", link)];
-    let response: Do0result = client
-        .post("https://do0.ir/post/sD9qHKZaUC7g/2.5/code")
-        .form(&params)
-        .send()?
-        .json()?;
-
-    Ok(response)
-}
 
 fn check_is_url(url: String) -> String {
     if (url.find("http://") != None) || (url.find("https://") != None) {
@@ -66,7 +32,7 @@ fn main() {
 
     let link: String = check_is_url(link);
     if link != "" {
-        let do0_answer: Do0result = get_request(link).expect("Error");
+        let do0_answer: make_short::Do0result = make_short::get_request(link).expect("Error");
         if do0_answer.error != "null" {
             eprintln!("something did Wrong from d0.ir.");
         } else {
