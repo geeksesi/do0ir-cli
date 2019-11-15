@@ -1,21 +1,11 @@
-use std::env;
-
+mod cli_argument;
 mod make_short;
 mod output;
 mod validation;
 
-fn main() {
-    let _args = env::args();
-    let mut i = 0;
-    let mut link: String = "".to_string();
-    for argument in _args {
-        if i == 1 {
-            link = argument;
-        }
-        i += 1;
-    }
 
-    let link: String = validation::check_is_url(link);
+fn do_it(mut link :String) {
+    link = validation::check_is_url(link);
     if link != "" {
         let do0_answer: make_short::Do0result = make_short::get_request(link).expect("Error");
         if do0_answer.error != "null" {
@@ -27,4 +17,15 @@ fn main() {
     } else {
         println!("please input the valid link...and try again.");
     }
+}
+
+fn main() {
+    let args: cli_argument::CliArguments = cli_argument::arguments();
+
+    println!("{:#?}", args);
+
+    if args.link != "null"{
+        do_it(args.link);
+    }
+
 }
