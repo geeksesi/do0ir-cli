@@ -1,16 +1,9 @@
-extern crate clipboard;
-use clipboard::ClipboardContext;
-use clipboard::ClipboardProvider;
+
 use std::env;
 
 mod make_short;
 mod validation;
-
-
-fn copy_to_clipboard(shorted: String) {
-    let mut ctx: ClipboardContext = ClipboardProvider::new().unwrap();
-    ctx.set_contents(shorted).unwrap();
-}
+mod output;
 
 fn main() {
     let _args = env::args();
@@ -32,7 +25,7 @@ fn main() {
             let mut shorted: String = "https://do0.ir/".to_string();
             shorted.push_str(&do0_answer.short);
             println!("Short link is {}", shorted);
-            copy_to_clipboard(shorted);
+            output::copy_to_clipboard(shorted);
         }
     } else {
         println!("please input the valid link...and try again.");
