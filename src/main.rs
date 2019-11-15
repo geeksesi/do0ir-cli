@@ -4,15 +4,8 @@ use clipboard::ClipboardProvider;
 use std::env;
 
 mod make_short;
+mod validation;
 
-
-fn check_is_url(url: String) -> String {
-    if (url.find("http://") != None) || (url.find("https://") != None) {
-        return url;
-    } else {
-        return "".to_string();
-    }
-}
 
 fn copy_to_clipboard(shorted: String) {
     let mut ctx: ClipboardContext = ClipboardProvider::new().unwrap();
@@ -30,7 +23,7 @@ fn main() {
         i += 1;
     }
 
-    let link: String = check_is_url(link);
+    let link: String = validation::check_is_url(link);
     if link != "" {
         let do0_answer: make_short::Do0result = make_short::get_request(link).expect("Error");
         if do0_answer.error != "null" {
