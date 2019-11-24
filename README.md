@@ -50,5 +50,7 @@ v1.9.0
 - [ ] run in startup ( as service )
 
 ### v3.0 :
-- [ ] get list of all link you shorted
+- [ ] hotkey changeable
+- [ ] set private api key on config file
+- [ ] make an local history (do0 has history but i don't want to use it)
 - [ ] make a ui interface
