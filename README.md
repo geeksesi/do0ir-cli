@@ -44,7 +44,11 @@ v1.5.0
 - [x] handle do0 errors 
 ### v2.0 :
 - [x] copy short link to clipboard
-- [ ] get list of all link you shorted
+- [x] short website link with a shortcut and copy to clipboard
+- [x] notification center (it's done but has a problem in windows 10)
+- [x] better Cli argument.
+- [ ] run in startup ( as service )
+
 ### v3.0 :
-- [ ] short website link with a shortcut and copy to clipboard
+- [ ] get list of all link you shorted
 - [ ] make a ui interface
