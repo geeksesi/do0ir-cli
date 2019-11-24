@@ -11,12 +11,38 @@ do0 is a good link shorter. can protect you from fishing links.
 - support all type of shell ( even CMD :D )
 
 
+
+
+
 ## installation
 download build from release ( or build it for yourself with --release flag)
 
 move it to enviroment path ( windows : `"C:\Program Files"` linux : look at `echo $PATH`)
 
-use `do0ir-cli Link `
+- also rename to `do0.exe` or `do0` it's easier use :)
+
+## Usage :
+
+### as a service (better way)
+- this ability is not completed because i don't know how can i run this as service
+just open the executable and don't close the terminal.
+
+copy link and press `CTRL+SHIFT+Q`\
+program will short your link and will show notification after job finished. (it's a global hotkey)
+
+
+### Cli argument (old way)
+we have 2 cli argument. 
+- LINK : it's your link
+- `--no-service` : this will cancel run as service mode.
+
+usage example : 
+```
+- do0.exe "https://google.com"
+- do0.exe "https://google.com" --no-service
+- do0.exe https://google.com --no-service
+```
+
 
 
 ## developer usage :
@@ -50,6 +76,8 @@ v1.9.0
 - [ ] run in startup ( as service )
 
 ### v3 :
+- [ ] make installation package
+- [ ] add system try icon 
 - [ ] hotkey changeable
 - [ ] set private api key on config file
 - [ ] make an local history (do0 has history but i don't want to use it)
