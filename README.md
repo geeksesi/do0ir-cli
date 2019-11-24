@@ -33,7 +33,7 @@ cargo run YOURLINK_HERE
 
 
 ## version :
-v1.5.0
+v1.9.0
 
 ## todo :
 - [x] make windows release
