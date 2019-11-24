@@ -43,6 +43,8 @@ usage example :
 - do0.exe https://google.com --no-service
 ```
 
+* tip : if your link has encoded character or space you must put it on double qoute. `""`
+
 
 
 ## developer usage :
@@ -82,3 +84,17 @@ v1.9.0
 - [ ] set private api key on config file
 - [ ] make an local history (do0 has history but i don't want to use it)
 - [ ] make a ui interface
+
+
+# Thired party libraries 
+- [reqwest](https://github.com/seanmonstar/reqwest)
+- [serde](https://github.com/serde-rs/serde)
+- [clipboard](https://github.com/aweinstock314/rust-clipboard)
+- [hotkey](https://github.com/UnwrittenFun/hotkey-rs)
+- [notifica](https://github.com/frewsxcv/rust-notifica)
+
+# License 
+- WTFPL
+- AGPL-v3.0
+
+as you wish :D
