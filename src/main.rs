@@ -1,10 +1,12 @@
+extern crate notifica;
+
 mod cli_argument;
 mod make_short;
 mod output;
-mod validation;
 mod shortkey;
+mod validation;
 
-fn do_it(mut link :String) {
+fn do_it(mut link: String) {
     link = validation::check_is_url(link);
     if link != "" {
         let do0_answer: make_short::Do0result = make_short::get_request(link).expect("Error");
@@ -24,11 +26,13 @@ fn main() {
 
     // println!("{:#?}", args);
 
-    if args.link != "null"{
+    if args.link != "null" {
         do_it(args.link);
     }
 
     if args.as_service {
+        notifica::notify("Do0.ir", "do0-cli is here use CTRL+shift+Q 🌍");
+        println!("Do0.ir is here use CTRL+shift+Q 🌍");
         shortkey::shortkey();
     }
 }
