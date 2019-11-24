@@ -2,7 +2,7 @@ mod cli_argument;
 mod make_short;
 mod output;
 mod validation;
-
+mod shortkey;
 
 fn do_it(mut link :String) {
     link = validation::check_is_url(link);
@@ -22,10 +22,13 @@ fn do_it(mut link :String) {
 fn main() {
     let args: cli_argument::CliArguments = cli_argument::arguments();
 
-    println!("{:#?}", args);
+    // println!("{:#?}", args);
 
     if args.link != "null"{
         do_it(args.link);
     }
 
+    if args.as_service {
+        shortkey::shortkey();
+    }
 }
