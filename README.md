@@ -24,12 +24,21 @@ move it to enviroment path ( windows : `"C:\Program Files"` linux : look at `ech
 ## Usage :
 
 ### as a service (better way)
-- this ability is not completed because i don't know how can i run this as service
-just open the executable and don't close the terminal.
+first step. for you this ability you must put the executable version in your startup ( if you want ) or run app and don't close it.\
 
 copy link and press `CTRL+SHIFT+Q`\
 program will short your link and will show notification after job finished. (it's a global hotkey)
 
+- some information to how add app to system try or run app on startup :
+#### Windows 
+- [trayconizer](https://do0.ir/4qOsV)
+- [add app to startup win10](https://do0.ir/DOXGh)
+#### linux
+- [add to startup _persian_](https://forum.ubuntu.ir/index.php?topic=150026.msg1166712)
+- [add to startup](https://www.simplified.guide/linux/automatically-run-program-on-startup)
+- also if you have KDE or GNOME or XFCE it's easy to put it on startup setting.
+- also if you are using i3 or other fucking minimal wm. you can put it on config file.
+- also linux is good. and if your a linux user you can find a way. ❤️
 
 ### Cli argument (old way)
 we have 2 cli argument. 
@@ -45,8 +54,6 @@ usage example :
 
 * tip : if your link has encoded character or space you must put it on double qoute. `""`
 
-
-
 ## developer usage :
 
 build :
@@ -59,9 +66,13 @@ run :
 cargo run YOURLINK_HERE
 ```
 
+release :
+```
+cargo build --release
+```
 
 ## version :
-v1.9.0
+v2.0.0
 
 ## todo :
 - [x] make windows release
@@ -75,7 +86,7 @@ v1.9.0
 - [x] short website link with a shortcut and copy to clipboard
 - [x] notification center (it's done but has a problem in windows 10)
 - [x] better Cli argument.
-- [ ] run in startup ( as service )
+- [x] ~~run in startup ( as service )~~ (you can do it by yourself. with add it to startup)
 
 ### v3 :
 - [ ] make installation package
