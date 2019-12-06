@@ -104,6 +104,12 @@ v2.0.0
 - [hotkey](https://github.com/UnwrittenFun/hotkey-rs)
 - [notifica](https://github.com/frewsxcv/rust-notifica)
 
+
+# known issues : 
+- 1 - hotkey has problem on my linux (https://github.com/UnwrittenFun/hotkey-rs/issues/1)
+- 2 - notifica will not work correct on windows 10 (https://github.com/frewsxcv/rust-notifica/issues/18)
+
+
 # License 
 - WTFPL
 - AGPL-v3.0
