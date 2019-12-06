@@ -40,7 +40,7 @@ fn do_it() {
             notifica::notify("Do0.ir successfully", "your link is in your clipboard just paste it.");
         }
     } else {
-        notifica::notify("Do0.ir error", "please copy a valid link.");
+        notifica::notify("Do0.ir error", "please give me a valid link.");
         println!("please input the valid link...and try again.");
     }
 }
