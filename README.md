@@ -26,7 +26,7 @@ move it to enviroment path ( windows : `"C:\Program Files"` linux : look at `ech
 ### as a service (better way)
 first step. for you this ability you must put the executable version in your startup ( if you want ) or run app and don't close it.\
 
-copy link and press `CTRL+SHIFT+Q`\
+copy link and press `CTRL+ALT+d`\
 program will short your link and will show notification after job finished. (it's a global hotkey)
 
 - some information to how add app to system try or run app on startup :

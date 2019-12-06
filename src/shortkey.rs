@@ -10,8 +10,8 @@ use hotkey;
 pub fn shortkey() {
     let mut hk = hotkey::Listener::new();
     hk.register_hotkey(
-        hotkey::modifiers::CONTROL | hotkey::modifiers::SHIFT,
-        'Q' as u32,
+        hotkey::modifiers::CONTROL | hotkey::modifiers::ALT,
+        'd' as u32,
         || do_it(),
     )
     .unwrap();

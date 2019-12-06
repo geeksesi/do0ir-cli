@@ -31,8 +31,8 @@ fn main() {
     }
 
     if args.as_service {
-        notifica::notify("Do0.ir", "do0-cli is here use CTRL+shift+Q 🌍");
-        println!("Do0.ir is here use CTRL+shift+Q 🌍");
+        notifica::notify("Do0.ir", "do0-cli is here use CTRL+ALT+d 🌍");
+        println!("Do0.ir is here use CTRL+ALT+d 🌍");
         shortkey::shortkey();
     }
 }
