@@ -95,6 +95,7 @@ v2.0.0
 - [ ] set private api key on config file
 - [ ] make an local history (do0 has history but i don't want to use it)
 - [ ] make a ui interface
+- [ ] you can choice wich link shorter service you want to use. ( please tell me on issues. ) (for now i want goo.gl and g02.ir)
 
 
 # Thired party libraries 
