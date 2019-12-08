@@ -109,7 +109,7 @@ v2.0.0
 # known issues : 
 - 1 - hotkey has problem on my linux (https://github.com/UnwrittenFun/hotkey-rs/issues/1)
 - 2 - notifica will not work correct on windows 10 (https://github.com/frewsxcv/rust-notifica/issues/18)
-
+- 4 - clipboard in linux will clean when proccess did finish (in --no-serve moce can't paste to clipboard.) (https://github.com/aweinstock314/rust-clipboard/issues/61)
 
 # License 
 - WTFPL
