@@ -1,3 +1,6 @@
+# Warning
+Do0.ir is out of access.
+
 # do0ir-cli
 cli tools for [do0.ir](https://do0.ir)
 
